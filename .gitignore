@@ -6,3 +6,7 @@ config/conf.d/sites-available/*
 !config/conf.d/sites-available/*template*
 !config/conf.d/sites-available/reverse-proxy.conf
 
+config/conf.d/stream-available/*
+!config/conf.d/stream-available/*template*
+!config/conf.d/stream-available/reverse-proxy.conf
+

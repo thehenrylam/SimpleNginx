@@ -1,0 +1,8 @@
+*.log
+*.pem
+*.ignore.*
+
+config/conf.d/sites-available/*
+!config/conf.d/sites-available/*template*
+!config/conf.d/sites-available/reverse-proxy.conf
+

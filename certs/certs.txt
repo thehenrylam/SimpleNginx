@@ -1,0 +1,2 @@
+If the privkey.pem/fullchain.pem is missing or incorrect:
+Execute the command ./gen-certs.sh to generate it.

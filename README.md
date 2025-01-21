@@ -3,6 +3,7 @@ A simple Nginx instance powered by Docker
 
 ## Setup Instructions
 
+### Step 1: Set up SSL keys (Likely takes a while, grab a cup of joe while it runs)
 Execute the following commands:
 
 ``` BASH
@@ -10,6 +11,27 @@ Execute the following commands:
 ./gen-dhparams.sh 
 # This command will generate ./certs/privkey.pem and ./certs/fullchain.pem (To enable SSL)
 ./gen-certs.sh
+```
+
+### Step 2: (Optional) Deploy a template via Ansible
+
+__First__, select what ansible playbooks looks best for you:
+- `./ansible/playbooks/deploy-config_jenkins.yml` 
+    - A minimal nginx deployment to route `https://hostname/jenkins` to a Jenkins app
+
+__Second__, Check and define the variables in the associated playbook:
+1. For every playbook `./ansible/playbooks/deploy-{{custom_name}}.yml`, there is an associated variable file:
+    - `./ansible/group_vars/{{custom_name}}.template.yml`
+2. Go into the file, and make whatever changes you see fit 
+
+__Third__, execute something along the lines of this command
+``` BASH
+# NOTE: Make sure that you're on the base path of this git repo
+
+# This is an example of a deployment of a simple jenkins reverse-proxy using:
+#   Playbook: ansible/playbooks/deploy-config_jenkins.yml
+#   Var File: ansible/group_vars/config_jenkins.template.yml
+ansible-playbook ansible/playbooks/deploy-config_jenkins.yml --extra-vars="@ansible/group_vars/config_jenkins.template.yml"
 ```
 
 ## Start/Stop Instructions

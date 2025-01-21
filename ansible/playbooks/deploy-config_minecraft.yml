@@ -1,0 +1,5 @@
+---
+- name: Deploy Config Minecraft
+  hosts: localhost
+  roles:
+    - "deploy-config_minecraft"

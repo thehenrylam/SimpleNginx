@@ -1,0 +1,5 @@
+---
+- name: Deploy Config Jenkins
+  hosts: localhost
+  roles:
+    - "deploy-config_jenkins"

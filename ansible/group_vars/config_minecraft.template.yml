@@ -1,0 +1,14 @@
+# Remove the CONFIG directory every time it executes to ensure a fresh deployment
+# Set it to false if you have pre-existing CONFIG changes that you'd like to keep
+force_redeploy: true
+
+minecraft:
+  # A custom name for the minecraft environment (useful for setting up multiple minecraft envs)
+  # Set force_redeploy == false if you want this to re-execute it with different names multiple times
+  name: "bismuth"
+  # The IP address of the minecraft environment (Set to localhost as an example)
+  ip_address: "127.0.0.1"
+  # The Port of the minecraft (java) environment (Set to default port: 25565)
+  port: 25565
+  # The Port that the user will use to connect to the minecraft environment 
+  bind_port: 20443

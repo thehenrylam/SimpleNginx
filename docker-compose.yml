@@ -4,7 +4,7 @@ services:
   reverse:
     container_name: reverse
     hostname: reverse
-    restart: on-failure
+    restart: always
     network_mode: host
     image: nginx
     ports: 
